@@ -29,7 +29,7 @@ void callback(String topic, byte* message, unsigned int length) {
     deserializeJson(CONFIG, messageTemp);
     Serial.println(messageTemp);
     sensor_t * s = esp_camera_sensor_get();
-    s->set_framesize(s, FRAMESIZE_VGA); //FRAMESIZE_ + QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
+    s->set_framesize(s, FRAMESIZE_VGA); //QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
     s->set_vflip(s, CONFIG["vflip"]); //0 - 1
     s->set_hmirror(s, CONFIG["hmirror"]); //0 - 1
     s->set_colorbar(s, CONFIG["colorbar"]); //0 - 1
@@ -68,8 +68,8 @@ void camera_init() {
   config.xclk_freq_hz = 20000000;
   config.pixel_format = PIXFORMAT_JPEG;
 
-  config.frame_size   = FRAMESIZE_VGA; // FRAMESIZE_ + QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
-  config.jpeg_quality = 10;            // quality of JPEG output. 0-63 = higher quality
+  config.frame_size   = FRAMESIZE_VGA; // QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
+  config.jpeg_quality = 10;           
   config.fb_count     = 1;
 
   esp_err_t err = esp_camera_init(&config);
@@ -136,7 +136,6 @@ void setup() {
   setup_wifi();
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
-  //camera_settings();
 }
 void loop() {
   if (!client.connected()) {
