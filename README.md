@@ -5,5 +5,6 @@ To accelerate the upload, increase the "MQTT_MAX_PACKET_SIZE" (>51200 or greater
 
 ## Librairies 
 ArduinoJSON6
+
 PubSubClient
 
