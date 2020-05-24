@@ -1,2 +1,3 @@
-# Dependency
-node-red-contrib-image-output
+# Dependencies
+* node-red-contrib-image-output
+* node-red-dashboard
