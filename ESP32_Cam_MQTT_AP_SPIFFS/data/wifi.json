@@ -1,0 +1,11 @@
+{
+"SSID" : "SSID",
+"Pass" : "PASS",
+"MQTT_Server" : "IP",
+"MQTT_User" : "USER",
+"MQTT_Pass" : "PASS",
+"Topic_PHOTO" : "photo",
+"Topic_CONFIG" : "config",
+"Topic_UP" : "out",
+"HostName" : "ESP32CAM_MQTT_01"
+}
